@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Animierter Button</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    .fancy-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .fancy-button:hover {
+      background-color: #45a049;
+      color: #fffde7;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .fancy-button:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+  <button class="fancy-button">Klick mich!</button>
+</body>
+</html>

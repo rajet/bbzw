@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animationen mit @keyframes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .exercise {
+            background: #3498db;
+            padding: 15px;
+            margin: 15px auto;
+            width: 300px;
+            border-radius: 5px;
+            color: white;
+        }
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            background: #e74c3c;
+            margin: 20px auto;
+            /* DONE: Implement a bouncing animation */
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .rotating-box {
+            width: 100px;
+            height: 100px;
+            background: #2ecc71;
+            margin: 20px auto;
+            /* DONE: Implement a continuous rotation animation */
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .fading-box {
+            width: 100px;
+            height: 100px;
+            background: #f39c12;
+            margin: 20px auto;
+            /* DONE: Implement a fade-in and fade-out effect */
+            animation: fade 3s infinite alternate;
+        }
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Beispiele für @keyframes Animationen</h1>
+    
+    <div class="exercise">Springende Box
+        <div class="animated-box"></div>
+    </div>
+    
+    <div class="exercise">Rotierende Box
+        <div class="rotating-box"></div>
+    </div>
+    
+    <div class="exercise">Ein-/Ausblendende Box
+        <div class="fading-box"></div>
+    </div>
+</body>
+</html>

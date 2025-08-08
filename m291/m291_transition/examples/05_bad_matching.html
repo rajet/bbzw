@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Schlechte Animation</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff3cd;
+    }
+
+    .bad-button {
+      position: relative;
+      display: inline-block;
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background-color: #ffc107;
+      color: #000;
+      border: 2px solid #000;
+      transition:
+        left 0.5s ease,
+        height 0.5s ease,
+        border 0.5s ease;
+    }
+
+    .bad-button:hover {
+      left: 100px;              
+      height: 200px;            
+      border: 20px solid red; 
+    }
+  </style>
+</head>
+<body>
+  <button class="bad-button">Oh nein 😬</button>
+</body>
+</html>
