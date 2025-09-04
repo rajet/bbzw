@@ -1,16 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Post } from "../types/post.types";
+
+const props = defineProps<{
+  post: Post;
+}>();
+</script>
 
 <template>
   <div class="post">
     <div class="post__votes voter">
       <button class="voter__action">👍</button>
-      <div class="voter__votes">12</div>
+      <div class="voter__votes">{{ props.post.votes }}</div>
       <button class="voter__action">👎</button>
     </div>
     <div class="post__content">
-      <div class="post__user">von Benutzername</div>
-      <div class="post__title">Post Titel</div>
-      <div class="post__text">Post Text</div>
+      <div class="post__user">{{ props.post.user }}</div>
+      <div class="post__title">{{ props.post.title }}</div>
+      <div class="post__text">{{ props.post.text }}</div>
     </div>
   </div>
 </template>

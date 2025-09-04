@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { faker } from "@faker-js/faker";
-import { ref } from "vue";
-import Post from "./components/Post.vue";
+import { type Ref, ref } from "vue";
+import PostItem from "./components/PostItem.vue";
+import type { Post } from "./types/post.types.ts";
 
-const posts = ref([
+const posts: Ref<Post[]> = ref([
   {
     id: 1,
     title: faker.lorem.words(10),
@@ -72,12 +73,9 @@ const posts = ref([
 
 <template>
   <div class="container">
-    <Post
-      title="Der Titel dieses Posts"
-      text="Der Text dieses Posts"
-      user="redd-it-user-123"
-      votes="99"
-    />
+    <div v-for="post in posts" :key="post.id" class="post">
+      <PostItem :post="post" />
+    </div>
   </div>
 </template>
 
