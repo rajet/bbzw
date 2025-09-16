@@ -16,6 +16,37 @@ const routes: RouteRecordRaw[] = [
     name: "Home",
     component: HomeView,
   },
+  {
+    path: "/about",
+    name: "About",
+    component: AboutView,
+    children: [
+      {
+        path: "news",
+        component: NewsView,
+      },
+      {
+        path: "jobs",
+        component: JobsView,
+      },
+    ],
+  },
+  {
+    path: "/secret",
+    name: "Secret",
+    component: TopSecretView,
+    beforeEnter: (to, from, next) => {
+      const evenMinute = new Date().getMinutes();
+      if (evenMinute % 2 === 0) {
+        next("/");
+        console.log("ZUGRIFF VERWEIGERT");
+      } else {
+        console.log("Zugriff erlaubt");
+        next();
+      }
+      console.log(`navigiert von: ${from.path} nach ${to.path}`);
+    },
+  },
 ];
 
 const router = createRouter({

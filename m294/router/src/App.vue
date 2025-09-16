@@ -15,6 +15,7 @@
 
   <main class="container">
     <!-- Inhalt -->
+    <RouterView />
   </main>
 </template>
 
